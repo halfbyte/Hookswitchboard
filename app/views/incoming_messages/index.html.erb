@@ -1,0 +1,13 @@
+<h1>Incoming Messages Debug view</h1>
+<table>
+  <tr>
+    <th>Time</th><th>Source</th><th>Data</th>
+  </tr>
+  <%- @messages.each do |message| -%>
+    <tr>
+      <td><%= message.created_at %></td>
+      <td><%= message.source %></td>
+      <td><pre><%= message.params.to_yaml %></pre></td>
+    </tr>
+  <%- end -%>
+</table>
